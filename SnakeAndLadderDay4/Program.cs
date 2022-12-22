@@ -11,7 +11,7 @@ namespace SnakeAndLadderDay4
             Random random= new Random();
 
             //taking option by using switch case
-            while (Position<=100)
+            while (Position<100)
             {
                 int DiceRoll = random.Next(1, 7);
                 int Option = random.Next(0, 3);  // Checking option by using random method
@@ -20,6 +20,8 @@ namespace SnakeAndLadderDay4
                 {
                     case 0:
                         Position = Position + DiceRoll;  // Updating position
+                        if(Position >100)
+                           Position = 100;
                         Console.WriteLine("Player got the Ladder and the dice : {0} Now player is in the position : {1}" , DiceRoll, Position);
                         break;
                     case 1:
